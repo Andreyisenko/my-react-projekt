@@ -6,6 +6,7 @@ export default function Product(props) {
       <h2>{props.name}</h2>
 	  <img src={props.imgUrl} alt={props.name} width="480" />
 	  <p>Price: {props.price} credits</p>
+	  <p>Price:   888 credits</p>
     </div>
   );
 };
