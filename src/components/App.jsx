@@ -1,15 +1,16 @@
+// import { BookList, favouriteBooks } from './Create/create';
 
-import { BookList, favouriteBooks } from "./Create/create";
+import Create from "./Create/create"
+import Product from "./Product/Product"
 
-
-
-
-const App = () => {
+ const App = () => {
   return (
     <>
-	  <h1>Books of the week</h1>
-      <BookList books={favouriteBooks} />
-    </>
-  );
-};
+     
+      <Product
+      price={2}
+      name="Boban" />
+      <Create />
+</>
+  )}
 export default App
