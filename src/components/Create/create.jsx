@@ -13,10 +13,20 @@
 // 	</ul>
 //   );
 // };
- const Create = () => {
+const Create = () => {
+     const arr = [{
+        id: 1, title: "Сало"},
+        {id: 2, title: "вода"},
+        {id: 3, title: "Мясо"},
+        {id: 4, title: "Цукерки"},
+          ]
   
     return (
-    <div>create</div>
+    <div>
+        <ul>
+            {arr.map((item) => <li key={item.id}> {item.title}</li>)}
+        </ul>
+    </div>
   )
 }
 

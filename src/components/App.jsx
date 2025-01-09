@@ -1,16 +1,23 @@
 // import { BookList, favouriteBooks } from './Create/create';
 
-import Create from "./Create/create"
-import Product from "./Product/Product"
+import Create from './Create/create';
+import Film from './Product/Product';
 
- const App = () => {
+const App = () => {
   return (
     <>
-     
-      <Product
-      price={2}
-      name="Boban" />
+     <h2>Film</h2>
+    <Film title="GoT"
+    autor="Stivenson"
+    time={2}/>
+    <Film  title="Taxi"
+    autor="Dilan Bob"
+    time={3}/>
+    <Film  title="Aqwamen"
+    autor="Vin Disel"
+    time={4}/>
       <Create />
-</>
-  )}
-export default App
+    </>
+  );
+};
+export default App;
