@@ -1,0 +1,9 @@
+.wraper {
+    background-color: yellow;
+border: solid 4px greenyellow;
+outline: 1px solid black;
+}
+.title {
+    font-size: 44px;
+    color: aqua;
+}

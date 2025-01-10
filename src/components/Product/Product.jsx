@@ -1,13 +1,17 @@
-
+import css from './Product.module.css'
 const Film = ({autor, time, title}) => {
   return (
-    <div>
+    <div className={css.wraper}>
      
 <ul>
   <li>
-    <h3>{title}</h3>
-    <p>Autor: {autor}</p>
-    <p>Time {time}</p>
+    <h3 className={css.title}>{title}</h3>
+    <p style={{color: "orange",
+      border: "solid 1px brown" 
+    }}>Autor: {autor}</p>
+    <p style={{backgroundColor: "blue",
+      color: "gray"
+    }}>Time {time}</p>
   </li>
 </ul>
     </div>

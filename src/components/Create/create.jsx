@@ -13,6 +13,7 @@
 // 	</ul>
 //   );
 // };
+import css from './Create.module.css'
 const Create = () => {
      const arr = [{
         id: 1, title: "Сало"},
@@ -22,8 +23,8 @@ const Create = () => {
           ]
   
     return (
-    <div>
-        <ul>
+    <div >
+        <ul className={css.list}>
             {arr.map((item) => <li key={item.id}> {item.title}</li>)}
         </ul>
     </div>
