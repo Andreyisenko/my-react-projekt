@@ -1,65 +1,38 @@
-// import { BookList, favouriteBooks } from './Create/create';
-
-import Alert from './Alert/Alert';
+import Button from './Button/Button';
+import ClickCounter from './Button/FollowButton';
+import LoginButton from './Button/LoginButton';
 import Create from './Create/create';
+import BookList from './FavouriteBooks/FavouriteBooks';
 import Film from './Product/Product';
-import { FcAssistant } from 'react-icons/fc';
-import { FcAddRow } from 'react-icons/fc';
-import { FcDeployment } from 'react-icons/fc';
-import { FcFilmReel } from "react-icons/fc";
-import  LoginButton  from './Button/LoginButton';
-import FollowButton from './Button/FollowButton';
+import favouriteBooks from '../favouriteBooks.json';
+import Mailbox from './Mailbox/Mailbox';
+import Product from './Prod/Prod';
+import UserMenu from './User/User';
+
 const App = () => {
   return (
-    <>
-      <h2>
-        
-        <FcAssistant color='green' size={50} />
-        Film  
-      </h2>
-      <Button> Reset </Button>
-<LoginButton />
-<FollowButton/>
-      <UserMenu name="Тарас"/>
-
-      
-      <Alert variant="info">
-        <FcAddRow />
-        Would you like to browse our recommended products?
-      </Alert>
-      <Alert variant="error" outlined>
-        There was an error during your last transaction
-      </Alert>
-      <Alert variant="success" elevated>
-        <FcDeployment />
-        Payment received, thank you for your purchase
-        <FcDeployment />
-      </Alert>
-      <Alert variant="warning" outlined elevated>
-        Please update your profile contact information
-      </Alert>
-      <FcDeployment />
-<FcFilmReel />
+    <div>
+      <Film />
+      <hr></hr>
+      <Button />
+      <ClickCounter />
+      <LoginButton />
+      <hr></hr>
       <Create />
-      <Film title="GoT" autor="Stivenson" time={2}>
-        <FcDeployment size={50}/>
-      </Film>
-      <Film title="Taxi" autor="Dilan Bob" time={3} />
-      <Film title="Aqwamen" autor="Vin Disel" time={4} />
-    </>
+      <hr></hr>
+      <BookList books={favouriteBooks} />
+      <hr></hr>
+      <Mailbox name="Іван" unreadMessages={6} />
+      <hr></hr>
+      <Product
+        imgUrl="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?dpr=2&h=480&w=640"
+        name="Taco"
+        price={23.99}
+      />
+      <hr></hr>
+      <UserMenu name="Bob" />
+    </div>
   );
 };
+
 export default App;
-
-import clsx from 'clsx';
-import UserMenu from './User/User';
-import Button from './Button/Button';
-
-const className = clsx(
-  'first',
-  10,
-  undefined && 'second',
-  true && 'third',
-  false ? 'fourth' : 'fifth'
-);
-console.log(className);

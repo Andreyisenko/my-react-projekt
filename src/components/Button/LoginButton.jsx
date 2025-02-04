@@ -3,7 +3,7 @@
 import Button  from "./Button";
    const LoginButton = () => {
     // Унікальна логіка кнопки логіна
-    return <Button variant={css.primary}>Login</Button>;
+    return <button variant={css.primary}>Login</button>;
   };
 
   export default LoginButton

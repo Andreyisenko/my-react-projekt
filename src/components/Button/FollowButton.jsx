@@ -1,9 +1,13 @@
-import  Button  from "./Button";
-import css from './Button.module.css'
+// import  Button  from "./Button";
+// import css from './Button.module.css'
+import { useState } from 'react';
 
-  // FollowButton.jsx
-  const FollowButton = () => {
-    // Унікальна логіка кнопки підписки
-    return <Button variant={css["secondary"]}>Follow</Button>;
+const ClickCounter = () => {
+  const [counter, setCounter] = useState(0);
+  const handleClick = () => {
+    setCounter(counter + 1);
+    console.log(counter);
   };
-  export default FollowButton
+  return <button onClick={handleClick}>Current: {counter}</button>;
+};
+export default ClickCounter;
