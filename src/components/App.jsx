@@ -15,6 +15,7 @@ import LangSwitcher from './LangSwitcher/LangSwitcher ';
 import { useState } from 'react';
 import FormLoginForm from './FormLoginForm/FormLoginForm';
 import { Formik } from 'formik';
+import FormikFeedbackForm from './FormikFeedbackForm/FormikFeedbackForm';
 
 const App = () => {
   // const handleLogin = userData => {
@@ -100,9 +101,9 @@ const App = () => {
       </label>
       <button type="button" disabled={!hasAccepted}>Proceed</button>
       <hr></hr> */}
-      <FormLoginForm/>
+      {/* <FormLoginForm/> */}
       <hr></hr>
-      <Formik/>
+      <FormikFeedbackForm/>
     </div>
   );
 };
