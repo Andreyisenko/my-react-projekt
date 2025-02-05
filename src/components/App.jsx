@@ -14,6 +14,7 @@ import SearchBar from './SearchBar/SearchBar';
 import LangSwitcher from './LangSwitcher/LangSwitcher ';
 import { useState } from 'react';
 import FormLoginForm from './FormLoginForm/FormLoginForm';
+import { Formik } from 'formik';
 
 const App = () => {
   // const handleLogin = userData => {
@@ -90,7 +91,7 @@ const App = () => {
           onChange={handleSizeChange}
         />
         Large
-      </label> */}
+      </label>
       <hr></hr>
       <label>
         <input type="checkbox" name="terms" 
@@ -98,8 +99,10 @@ const App = () => {
          onChange={handleChange}/>I accept terms and conditions
       </label>
       <button type="button" disabled={!hasAccepted}>Proceed</button>
-      <hr></hr>
+      <hr></hr> */}
       <FormLoginForm/>
+      <hr></hr>
+      <Formik/>
     </div>
   );
 };
