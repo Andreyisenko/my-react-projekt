@@ -7,15 +7,24 @@ import Film from './Product/Product';
 import favouriteBooks from '../favouriteBooks.json';
 import Mailbox from './Mailbox/Mailbox';
 import Product from './Prod/Prod';
-import UserMenu from './User/User';
+import UserMenu from '../pages/User/User';
 import LoginForm from './LoginForm/LoginForm';
 import MuComponent from './MyComponent/MyComponent';
-import SearchBar from './SearchBar/SearchBar';
+import SearchBar from '../pages/SearchBar/SearchBar';
 import LangSwitcher from './LangSwitcher/LangSwitcher ';
 import { useState } from 'react';
-import FormLoginForm from './FormLoginForm/FormLoginForm';
+import FormLoginForm from '../pages/FormLoginForm/FormLoginForm';
 import { Formik } from 'formik';
-import FormikFeedbackForm from './FormikFeedbackForm/FormikFeedbackForm';
+import FormikFeedbackForm from '../pages/FormikFeedbackForm/FormikFeedbackForm';
+import { Route, Routes } from 'react-router-dom';
+import Header from './Header/Header';
+import Company from './NestedRouts/Company';
+import Team from './NestedRouts/Team';
+import Aim from './NestedRouts/Aim';
+import About from '../pages/About';
+import Users from '../pages/Users/Users';
+import UserDetails from '../pages/UserDetails/UserDetails';
+import UserPost from './NestedRouts/UserPost';
 
 const App = () => {
   // const handleLogin = userData => {
@@ -28,13 +37,15 @@ const App = () => {
     setCoffeeSize(evt.target.value);
   };
   const [hasAccepted, setHasAccepted] = useState(false);
-  const handleChange = (evt) => {
+  const handleChange = evt => {
     setHasAccepted(evt.target.checked);
   };
 
   return (
-    <div>
-      {/* <Film />
+    <>
+      <Header />
+      <Routes>
+        {/* <Film />
       <hr></hr>
       <Button />
       <ClickCounter />
@@ -53,13 +64,13 @@ const App = () => {
       />
       <hr></hr>
       <UserMenu name="Bob" /> */}
-      {/* <h1>Please login to your account!</h1>
+        {/* <h1>Please login to your account!</h1>
       Передаємо колбек як пропс форми
       <LoginForm onLogin={handleLogin} />   
       <MuComponent/> 
       <hr></hr>
       <SearchBar/>  */}
-      {/* <p>Selected language:{lang}</p>
+        {/* <p>Selected language:{lang}</p>
       <LangSwitcher value={lang} onSelect={setLang} />
       <hr></hr>
       <h1>Select coffee size {coffeeSize}</h1>
@@ -101,10 +112,28 @@ const App = () => {
       </label>
       <button type="button" disabled={!hasAccepted}>Proceed</button>
       <hr></hr> */}
-      {/* <FormLoginForm/> */}
-      <hr></hr>
-      <FormikFeedbackForm/>
-    </div>
+        {/* <FormLoginForm/> */}
+        {/* <FormikFeedbackForm/> */}
+        <Route path="/" element={<h2>Hello world</h2>} />
+        <Route path="/about" element={<About />}>
+          <Route path="company" element={<Company />} />
+          <Route path="team" element={<Team />} />
+          <Route path="aim" element={<Aim />} />
+        </Route>
+        <Route path="/form" element={<FormikFeedbackForm />} />
+        <Route path="/SearchBar" element={<SearchBar />} />
+        <Route path="/UserMenu" element={<UserMenu />} />
+        <Route path="/formLogin" element={<FormLoginForm />} />
+        <Route path="/users" element={<Users />} />
+
+        <Route path="/users/:usesId" element={<UserDetails />}>
+          <Route path="info" element={<h2>Info about user</h2>} />
+
+          <Route path="posts" element={<UserPost />} />
+        </Route>
+        <Route path="*" element={<h2>Not found</h2>} />
+      </Routes>
+    </>
   );
 };
 
