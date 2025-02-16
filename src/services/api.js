@@ -1,5 +1,6 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://dummyjson.com';
+// axios.defaults.baseURL = 'https://api.themoviedb.org';
 
 export const fetchUsers = async () => {
   const { data } = await axios.get('users');
