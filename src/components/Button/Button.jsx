@@ -1,15 +1,21 @@
-// Button.jsx
 import clsx from 'clsx';
 import css from './Button.module.css';
-const Button = ({ variant }) => {
-  const handleClick = () => {
-    alert("I'm a button!");
-  };
-  // Базові стилі кнопки з кількома варіантами відображення
+
+export const Button = ({
+  selected = false,
+  type = 'button',
+  children,
+  ...otherProps
+}) => {
   return (
-    <button onClick={handleClick} className={clsx(css.button, css[variant])}>
-      Click me!
+    <button
+      className={clsx(css.btn, {
+        [css.isSelected]: selected,
+      })}
+      type={type}
+      {...otherProps}
+    >
+      {children}
     </button>
   );
 };
-export default Button;

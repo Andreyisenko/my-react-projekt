@@ -1,50 +1,57 @@
-import Button from './Button/Button';
-import ClickCounter from './Button/FollowButton';
-import LoginButton from './Button/LoginButton';
-import Create from './Create/create';
-import BookList from './FavouriteBooks/FavouriteBooks';
-import Film from './Product/Product';
-import favouriteBooks from '../favouriteBooks.json';
-import Mailbox from './Mailbox/Mailbox';
-import Product from './Prod/Prod';
-import UserMenu from '../pages/User/User';
-import LoginForm from './LoginForm/LoginForm';
-import MuComponent from './MyComponent/MyComponent';
-import SearchBar from '../pages/SearchBar/SearchBar';
-import LangSwitcher from './LangSwitcher/LangSwitcher ';
-import { useState } from 'react';
-import FormLoginForm from '../pages/FormLoginForm/FormLoginForm';
-import { Formik } from 'formik';
-import FormikFeedbackForm from '../pages/FormikFeedbackForm/FormikFeedbackForm';
-import { Route, Routes } from 'react-router-dom';
-import Header from './Header/Header';
-import Company from './NestedRouts/Company';
-import Team from './NestedRouts/Team';
-import Aim from './NestedRouts/Aim';
-import About from '../pages/About';
-import Users from '../pages/Users/Users';
-import UserDetails from '../pages/UserDetails/UserDetails';
-import UserPost from './NestedRouts/UserPost';
+// import Button from './Button2/Button';
+// import ClickCounter from './Button2/FollowButton';
+// import LoginButton from './Button2/LoginButton';
+// import Create from './Create/create';
+// import BookList from './FavouriteBooks/FavouriteBooks';
+// import Film from './Product/Product';
+// import favouriteBooks from '../favouriteBooks.json';
+// import Mailbox from './Mailbox/Mailbox';
+// import Product from './Prod/Prod';
+// import UserMenu from '../pages/User/User';
+// import LoginForm from './LoginForm/LoginForm';
+// import MuComponent from './MyComponent/MyComponent';
+// import SearchBar from '../pages/SearchBar/SearchBar';
+// import LangSwitcher from './LangSwitcher/LangSwitcher ';
+// import { useState } from 'react';
+// import FormLoginForm from '../pages/FormLoginForm/FormLoginForm';
+// import { Formik } from 'formik';
+// import FormikFeedbackForm from '../pages/FormikFeedbackForm/FormikFeedbackForm';
+// import { Route, Routes } from 'react-router-dom';
+// import Header from './Header/Header';
+// import Company from './NestedRouts/Company';
+// import Team from './NestedRouts/Team';
+// import Aim from './NestedRouts/Aim';
+// import About from '../pages/About';
+// import Users from '../pages/Users/Users';
+// import UserDetails from '../pages/UserDetails/UserDetails';
+// import UserPost from './NestedRouts/UserPost';
+
+
+import { Layout } from './Layout/Layout';
+import { AppBar } from './AppBar/AppBar';
+import { TaskForm } from './TaskForm/TaskForm';
+import {TaskList} from './TaskList/TaskList';
+
 
 const App = () => {
   // const handleLogin = userData => {
   //   console.log(userData);
   // };
-  const [lang, setLang] = useState('uk');
-  const [coffeeSize, setCoffeeSize] = useState('sm');
-  const handleSizeChange = evt => {
-    console.log(evt.target.value);
-    setCoffeeSize(evt.target.value);
-  };
-  const [hasAccepted, setHasAccepted] = useState(false);
-  const handleChange = evt => {
-    setHasAccepted(evt.target.checked);
-  };
+  // const [lang, setLang] = useState('uk');
+  // const [coffeeSize, setCoffeeSize] = useState('sm');
+  // const handleSizeChange = evt => {
+  //   console.log(evt.target.value);
+  //   setCoffeeSize(evt.target.value);
+  // };
+  // const [hasAccepted, setHasAccepted] = useState(false);
+  // const handleChange = evt => {
+  //   setHasAccepted(evt.target.checked);
+  // };
 
   return (
     <>
-      <Header />
-      <Routes>
+      {/* <Header />
+      <Routes> */}
         {/* <Film />
       <hr></hr>
       <Button />
@@ -114,7 +121,7 @@ const App = () => {
       <hr></hr> */}
         {/* <FormLoginForm/> */}
         {/* <FormikFeedbackForm/> */}
-        <Route path="/" element={<h2>Hello world</h2>} />
+        {/* <Route path="/" element={<h2>Hello world</h2>} />
         <Route path="/about" element={<About />}>
           <Route path="company" element={<Company />} />
           <Route path="team" element={<Team />} />
@@ -132,7 +139,17 @@ const App = () => {
           <Route path="posts" element={<UserPost />} />
         </Route>
         <Route path="*" element={<h2>Not found</h2>} />
-      </Routes>
+        
+      </Routes> */}
+    
+    
+      <Layout>
+      <AppBar />
+      <TaskForm />
+      <TaskList />
+    </Layout>
+    
+    
     </>
   );
 };
