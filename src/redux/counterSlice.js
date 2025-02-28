@@ -8,7 +8,7 @@ const initialState = {
 const slice = createSlice({
   name: 'counter',
   initialState,
-  reducers: {
+  reducers: { 
     increment: (state, action) => {
       state.counter += state.step;
     },
@@ -25,4 +25,6 @@ const slice = createSlice({
 });
 
 export const counterReducer = slice.reducer;
+// console.log(counterReducer);
+// console.log(slice.reducer);
 export const { increment, decrement, reset, changeStep} = slice.actions;
